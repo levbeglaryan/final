@@ -9,20 +9,14 @@ module.exports = class Winger {
 		while (this.x > 0) {
 			matrix[this.y][this.x] = 0;
 			this.x--;
-			matrix[this.y][this.x] = 5;
+			matrix[this.y][this.x] = 4;
 		}
 		while (this.y > 0) {
 			matrix[this.y][this.x] = 0;
 			this.y--;
-			matrix[this.y][this.x] = 5;
+			matrix[this.y][this.x] = 4;
 		}
 	}
-
-	random(ch){
-		let found = this.chooseCell(ch);
-		let result = Math.floor(Math.random()*found.length)
-		return found[result];
-}
 
 	move() {
 		matrix[this.y][this.x] = 0;
@@ -36,11 +30,11 @@ module.exports = class Winger {
 			this.y--;
 		}
 		
-		if(matrix[this.y][this.x]) {
+		if (matrix[this.y][this.x]) {
 			this.energy++;
 		}
 
-		if(this.energy > 50) {
+		if (this.energy > 50) {
 			this.mul(0, 0);
 		}
 
@@ -54,7 +48,7 @@ module.exports = class Winger {
 			this.del(predatorArr);
 		}
 		
-		matrix[this.y][this.x] = 5;
+		matrix[this.y][this.x] = 4;
 	}
 
 	del(cell) {
@@ -87,4 +81,4 @@ module.exports = class Winger {
 		const winger = new Winger(x, y);
 		wingerArr.push(winger);
 	}
-}
+};

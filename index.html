@@ -4,10 +4,89 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Programmin Final</title>
+		<link rel="shortcut icon" href="components/images/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="style.css">
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+		<title>Programming Final</title>
 	</head>
-	<body>
-		<script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+	<body class="bg-dark overflow-x-hidden">
+		<div class="dot"></div>
+		<div class="container-fluid mx-2 mb-5 mt-2">
+			<div class="row">
+				<h1 class="text-center text-white">Game of Life</h1>
+			</div>
+			<div class="row">
+				<!-- Iteractions -->
+				<div class="col-sm-12 col-md-6 p-1 border gap-3">
+					<h2 class="text-center text-white mb-3">Iteractions and current info</h2>
+					<div class="d-flex justify-content-center gap-3">
+						<button id="restart" type="button" class="btn btn-primary">Restart</button>
+						<div>
+							<button type="button" class="weather btn btn-secondary">Winter</button>
+							<button type="button" class="weather btn btn-success">Summer</button>
+						</div>
+					</div>
+
+					<div class="d-flex flex-column p-3 justify-content-center gap-3 text-white">
+						<h2>Grass: <span class="current_count_info" data-name="grass">5</span></h2>
+						<h2>Grass eater: <span class="current_count_info" data-name="grassEater">4</span></h2>
+						<h2>Predator: <span class="current_count_info" data-name="predator">3</span></h2>
+						<h2>Winger: <span class="current_count_info" data-name="winger">2</span></h2>
+						<h2>Bomb: <span class="current_count_info" data-name="bomb">1</span></h2>
+						<h2>Virus: <span class="current_count_info" data-name="virus">1</span></h2>
+						<h2>Weather: <span class="current_weather_info">spring</span></h2>
+					</div>
+				</div>
+				<!-- Information about heroes -->
+				<div class="col-sm-12 col-md-6 p-1 border">
+					<h2 class="text-center text-white">Information about heroes</h2>
+					<table class="table table-dark text-center">
+						<thead>
+							<tr>
+								<th scope="col">№</th>
+								<th scope="col">Color</th>
+								<th scope="col">Name</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope="row">1</th>
+								<td class="green"></td>
+								<td>Grass</td>
+							</tr>
+							<tr>
+								<th scope="row">2</th>
+								<td class="yellow"></td>
+								<td>Grass eater</td>
+							</tr>
+							<tr>
+								<th scope="row">3</th>
+								<td class="red"></td>
+								<td>Predator</td>
+							</tr>
+							<tr>
+								<th scope="row">4</th>
+								<td class="purple"></td>
+								<td>Winger</td>
+							</tr>
+							<tr>
+								<th scope="row">5</th>
+								<td class="black"></td>
+								<td>Bomb</td>
+							</tr>
+							<tr>
+								<th scope="row">6</th>
+								<td class="brown"></td>
+								<td>Virus</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<!-- Scripts -->
+		<script src="https://cdn.socket.io/4.6.0/socket.io.min.js" integrity="sha384-c79GN5VsunZvi+Q/WObgk2in0CbZsHnjEqvFxC5DxHn9lTfNce2WW6h2pH6u/kF+" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/p5@1.5.0/lib/p5.js"></script>
 		<script src="script.js"></script>
 	</body>

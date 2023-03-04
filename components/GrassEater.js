@@ -1,42 +1,10 @@
-module.exports = class GrassEater {
+const GameComponent = require("./Component");
+
+module.exports = class GrassEater extends GameComponent {
 	constructor(x, y) {
-		this.x = x;
-		this.y = y;
+		super(x, y);
+		this.gender = this.randomGender();
 		this.energy = 8;
-		this.directions = [];
-	}
-
-	getNewCoordinates() {
-		this.directions = [
-			[this.x - 1, this.y - 1],
-			[this.x, this.y - 1],
-			[this.x + 1, this.y - 1],
-			[this.x - 1, this.y],
-			[this.x + 1, this.y],
-			[this.x - 1, this.y + 1],
-			[this.x, this.y + 1],
-			[this.x + 1, this.y + 1]
-		];
-	}
-
-	random(ch){
-		let found = this.chooseCell(ch);
-		let result = Math.floor(Math.random()*found.length)
-		return found[result];
-}
-
-	chooseCell(character) {
-		let found = [];
-		for (let i in this.directions) {
-			let x = this.directions[i][0];
-			let y = this.directions[i][1];
-			if ((x >= 0 && x < matrix[0].length) && (y >= 0 && y < matrix.length)) {
-				if (matrix[y][x] === character) {
-					found.push(this.directions[i]);
-				}
-			}
-		}
-		return found;
 	}
 
 	move() {
@@ -44,7 +12,7 @@ module.exports = class GrassEater {
 			this.getNewCoordinates();
 			this.energy--;
 			let emptyCells = this.chooseCell(0);
-			let oneEmptyCell = random(emptyCells);
+			let oneEmptyCell = this.random(emptyCells);
 			if (oneEmptyCell) {
 				matrix[this.y][this.x] = 0;
 				let neighX = oneEmptyCell[0];
@@ -59,16 +27,18 @@ module.exports = class GrassEater {
 	}
 
 	mul(x, y) {
-		this.energy = 8;
-		matrix[y][x] = 2;
-		const newGrassEater = new GrassEater(x, y);
-		grassEaterArr.push(newGrassEater);
+		if (this.gender === "female") {
+			this.energy = 8;
+			matrix[y][x] = 2;
+			const newGrassEater = new GrassEater(x, y);
+			grassEaterArr.push(newGrassEater);
+		}
 	}
 
 	eat() {
 		this.getNewCoordinates();
 		let grasses = this.chooseCell(1);
-		let oneGrass = random(grasses);
+		let oneGrass = this.random(grasses);
 		if (oneGrass) {
 			this.energy++;
 			let oneGrassX = oneGrass[0];
@@ -102,4 +72,4 @@ module.exports = class GrassEater {
 			}
 		}
 	}
-}
+};

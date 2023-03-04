@@ -1,0 +1,4 @@
+1) script.js um colorneri mej noric if dnel u ete weather y summer a xoti guyny dardznel dexnot u mnacacy nuyn principov
+2) matrixGenerator um amen mekic qani hat stexcel
+3) matrixi chapery dzel
+4) bomb y sharjvum a random stexcvuma random payteluc kanchuma clear canvas function y u anhetanuma groxi cocy

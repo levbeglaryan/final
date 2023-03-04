@@ -1,0 +1,43 @@
+.purple {
+	background-color: purple !important;
+}
+
+.red {
+	background-color: red !important;
+}
+
+.yellow {
+	background-color: yellow !important;
+}
+
+.green {
+	background-color: green !important;
+}
+
+.black {
+	background-color: #000 !important;
+}
+
+.brown {
+	background-color: #493713 !important;
+}
+
+.dot {
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 1px;
+	height: 1px;
+	border-radius: 50%;
+	transition: 1s;
+}
+
+.dot.active {
+	box-shadow: 0 0 0 30px rgba(255, 35, 35, .1),
+							0 0 0 60px rgba(255, 35, 35, .1),
+							0 0 0 120px rgba(255, 35, 35, .1),
+							0 0 0 240px rgba(255, 35, 35, .1),
+							0 0 0 480px rgba(255, 35, 35, .1),
+							0 0 0 960px rgba(255, 35, 35, .1);
+}

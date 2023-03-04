@@ -1,8 +1,8 @@
-module.exports = class Grass {
-	constructor(x, y, index) {
-		this.x = x;
-		this.y = y;
-		this.index = index;
+const GameComponent = require("./Component");
+
+module.exports = class Grass extends GameComponent {
+	constructor(x, y) {
+		super(x, y);
 		this.multiply = 0;
 		this.directions = [
 			[this.x - 1, this.y - 1],
@@ -16,31 +16,11 @@ module.exports = class Grass {
 		];
 	}
 
-	random(ch){
-		let found = this.chooseCell(ch);
-		let result = Math.floor(Math.random()*found.length)
-		return found[result];
-}
-
-	chooseCell(character) {
-		let found = [];
-		for (const i in this.directions) {
-			let x = this.directions[i][0];
-			let y = this.directions[i][1];
-			if ((x >= 0 && x < matrix[0].length) && (y >= 0 && y < matrix.length)) {
-				if (matrix[y][x] === character) {
-					found.push(this.directions[i]);
-				}
-			}
-		}
-		return found;
-	}
-
 	mul() {
 		this.multiply++;
 		const emptyCells = this.chooseCell(0);
-		const newCell = random(emptyCells);
-		if(newCell && this.multiply >= 8) {
+		const newCell = this.random(emptyCells);
+		if(newCell && this.multiply >= 2) {
 			const newX = newCell[0];
 			const newY = newCell[1];
 			matrix[newY][newX] = 1;
@@ -49,4 +29,4 @@ module.exports = class Grass {
 			this.multiply = 0;
 		}
 	}
-}
+};
