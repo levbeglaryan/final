@@ -11,14 +11,19 @@ function setup() {
 }
 
 // Updating the colors
-function updateColors(matrix) {
+function updateColors(matrix, grassEaterArr) {
 	for (let y = 0; y < matrix.length; y++) {
 		for (let x = 0; x < matrix[y].length; x++) {
 			const current = matrix[y][x];
 			if (current === 1) {
 				fill("green");
 			} else if (current === 2) {
-				fill("yellow");
+				try {
+					const currentGrassEater = grassEaterArr.find(grassEater => {
+						return grassEater.x === x && grassEater.y === y;
+					});
+					fill(currentGrassEater.color);
+				} catch {}
 			} else if (current === 3) {
 				fill("red");
 			} else if (current === 4) {

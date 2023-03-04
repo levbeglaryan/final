@@ -1,8 +1,8 @@
 {
-  "grass": 119,
-  "grassEater": 55,
-  "predator": 0,
-  "winger": 12,
+  "grass": 99,
+  "grassEater": 79,
+  "predator": 1,
+  "winger": 1,
   "bomb": 1,
   "virus": 1
 }

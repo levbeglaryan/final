@@ -4,6 +4,7 @@ module.exports = class GrassEater extends GameComponent {
 	constructor(x, y) {
 		super(x, y);
 		this.gender = this.randomGender();
+		this.color = this.gender === "male" ? "blue" : "yellow";
 		this.energy = 8;
 	}
 

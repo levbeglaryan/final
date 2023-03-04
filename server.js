@@ -148,7 +148,7 @@ function gameMove() {
 	}
 
 	// Sending current matrix to script.js file
-	io.emit("send matrix", matrix);
+	io.emit("send matrix", matrix, grassEaterArr);
 }
 // Running the game
 id = setInterval(gameMove, GAMESPEED);

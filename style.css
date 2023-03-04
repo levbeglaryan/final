@@ -22,6 +22,10 @@
 	background-color: #493713 !important;
 }
 
+.blue {
+	background-color: blue !important;
+}
+
 .dot {
 	position: absolute;
 	top: 100%;
